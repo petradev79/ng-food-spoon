@@ -1,0 +1,14 @@
+<div class="recipe-item">
+  <div class="recipe-item__header">
+    <img class="recipe-item__img" [src]="recipe.image" [alt]="recipe.title" />
+    <h3 class="recipe-item__title">{{ recipe.title }}</h3>
+  </div>
+  <div class="recipe-item__footer">
+    <button mat-mini-fab color="primary">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <button mat-mini-fab color="accent">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
+</div>
