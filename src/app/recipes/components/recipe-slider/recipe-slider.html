@@ -3,15 +3,16 @@
     <mat-expansion-panel-header class="recipe-slider__header">
       <div>
         <mat-panel-title class="recipe-slider__title">
-          {{title}}
+          <mat-icon color="primary">tune</mat-icon>
+          {{slider.title}}
         </mat-panel-title>
-        <mat-panel-description> {{description}} </mat-panel-description>
+        <mat-panel-description> {{slider.description}} </mat-panel-description>
       </div>
     </mat-expansion-panel-header>
     <ngx-slider
-      [(value)]="value"
-      [(highValue)]="highValue"
-      [options]="options"
+      [(value)]="slider.minValue"
+      [(highValue)]="slider.maxValue"
+      [options]="slider.options"
     ></ngx-slider>
     <div class="recipe-slider__actions">
       <button mat-flat-button color="accent" (click)="resetSliderValues()">

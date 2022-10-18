@@ -8,6 +8,7 @@ import { RecipeInterface } from 'src/app/recipes/models/recipes.interface';
 })
 export class RecipeItemComponent implements OnInit {
   @Input('recipe') recipe!: RecipeInterface;
+  isFavorite: boolean = false;
 
   constructor() {}
 

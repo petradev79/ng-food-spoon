@@ -1,37 +1,20 @@
 <div class="recipe-filters">
   <h2>Recipe filters</h2>
-  <p>{{sliderCalories.minValue}}</p>
   <div class="recipe-filters__sliders">
     <app-recipe-slider
-      [title]="sliderCalories.title"
-      [description]="sliderCalories.description"
-      [value]="sliderCalories.minValue"
-      [highValue]="sliderCalories.maxValue"
-      [options]="sliderCalories.options"
+      [slider]="sliderCalories"
       (changeSliderValuesEvent)="onChangeSliderValues($event)"
     ></app-recipe-slider>
     <app-recipe-slider
-      [title]="sliderCarbs.title"
-      [description]="sliderCarbs.description"
-      [value]="sliderCarbs.minValue"
-      [highValue]="sliderCarbs.maxValue"
-      [options]="sliderCarbs.options"
+      [slider]="sliderCarbs"
       (changeSliderValuesEvent)="onChangeSliderValues($event)"
     ></app-recipe-slider>
     <app-recipe-slider
-      [title]="sliderProtein.title"
-      [description]="sliderProtein.description"
-      [value]="sliderProtein.minValue"
-      [highValue]="sliderProtein.maxValue"
-      [options]="sliderProtein.options"
+      [slider]="sliderProtein"
       (changeSliderValuesEvent)="onChangeSliderValues($event)"
     ></app-recipe-slider>
     <app-recipe-slider
-      [title]="sliderFat.title"
-      [description]="sliderFat.description"
-      [value]="sliderFat.minValue"
-      [highValue]="sliderFat.maxValue"
-      [options]="sliderFat.options"
+      [slider]="sliderFat"
       (changeSliderValuesEvent)="onChangeSliderValues($event)"
     ></app-recipe-slider>
   </div>

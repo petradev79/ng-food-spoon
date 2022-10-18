@@ -1,7 +1,12 @@
 .recipe-filters {
-  background: rgb(214, 229, 234);
   position: fixed;
   width: 25rem;
-  min-height: calc(100vh - 3rem);
-  padding: 2rem;
+  height: calc(100vh - 3rem);
+  padding: 3rem;
+  overflow-y: scroll;
+  background: #fdfbfb;
+}
+
+::-webkit-scrollbar {
+  width: 0.7rem;
 }

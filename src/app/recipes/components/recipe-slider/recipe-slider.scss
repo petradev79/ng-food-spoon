@@ -1,12 +1,21 @@
 .recipe-slider {
   margin-bottom: 1rem;
-
+  // border: 1px solid red;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: -5px 5px 20px 0px rgba(0, 0, 0, 0.2);
   &__header {
     height: 100px;
   }
 
   &__title {
     margin-bottom: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+
+    // .material-icons {
+    //   color: red;
+    // }
   }
 
   &__actions {
@@ -18,11 +27,11 @@
 
 ::ng-deep {
   .recipe-slider .ngx-slider .ngx-slider-bar {
-    background: #ffe4d1;
+    background: rgba(233, 185, 122, 0.5);
     height: 3px;
   }
   .recipe-slider .ngx-slider .ngx-slider-selection {
-    background: orange;
+    background-color: rgb(233, 185, 122);
   }
 
   .recipe-slider .ngx-slider .ngx-slider-pointer {
@@ -30,7 +39,7 @@
     height: 16px;
     top: -8px;
     border-radius: 3px;
-    background-color: rgb(174, 28, 193);
+    background-color: #3f51b5;
   }
 
   .recipe-slider .ngx-slider .ngx-slider-pointer:after {
