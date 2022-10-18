@@ -5,12 +5,14 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { RecipesService } from 'src/app/recipes/services/recipes.service';
 import { RecipesComponent } from 'src/app/recipes/recipes.component';
 import { RecipeListComponent } from 'src/app/recipes/components/recipes-list/recipe-list.component';
 import { RecipeItemComponent } from 'src/app/recipes/components/recipe-item/recipe-item';
 import { RecipeFiltersComponent } from 'src/app/recipes/components/recipe-filters/recipe-filters';
+import { RecipeSliderComponent } from 'src/app/recipes/components/recipe-slider/recipe-slider';
 
 const routes: Routes = [
   {
@@ -26,6 +28,7 @@ const routes: Routes = [
     RecipeListComponent,
     RecipeItemComponent,
     RecipeFiltersComponent,
+    RecipeSliderComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +36,7 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule,
     NgxSliderModule,
+    MatExpansionModule,
   ],
   exports: [],
   providers: [RecipesService],

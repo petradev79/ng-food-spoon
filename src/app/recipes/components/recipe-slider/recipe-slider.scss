@@ -1,0 +1,43 @@
+.recipe-slider {
+  margin-bottom: 1rem;
+
+  &__header {
+    height: 100px;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+  }
+
+  &__actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+::ng-deep {
+  .recipe-slider .ngx-slider .ngx-slider-bar {
+    background: #ffe4d1;
+    height: 3px;
+  }
+  .recipe-slider .ngx-slider .ngx-slider-selection {
+    background: orange;
+  }
+
+  .recipe-slider .ngx-slider .ngx-slider-pointer {
+    width: 10px;
+    height: 16px;
+    top: -8px;
+    border-radius: 3px;
+    background-color: rgb(174, 28, 193);
+  }
+
+  .recipe-slider .ngx-slider .ngx-slider-pointer:after {
+    display: none;
+  }
+
+  .recipe-slider .ngx-slider .ngx-slider-bubble {
+    font-size: 14px;
+  }
+}

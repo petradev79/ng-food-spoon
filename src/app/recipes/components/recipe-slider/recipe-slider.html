@@ -1,0 +1,25 @@
+<div class="recipe-slider">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header class="recipe-slider__header">
+      <div>
+        <mat-panel-title class="recipe-slider__title">
+          {{title}}
+        </mat-panel-title>
+        <mat-panel-description> {{description}} </mat-panel-description>
+      </div>
+    </mat-expansion-panel-header>
+    <ngx-slider
+      [(value)]="value"
+      [(highValue)]="highValue"
+      [options]="options"
+    ></ngx-slider>
+    <div class="recipe-slider__actions">
+      <button mat-flat-button color="accent" (click)="resetSliderValues()">
+        Reset
+      </button>
+      <button mat-flat-button color="primary" (click)="saveSliderValues()">
+        Save
+      </button>
+    </div>
+  </mat-expansion-panel>
+</div>
