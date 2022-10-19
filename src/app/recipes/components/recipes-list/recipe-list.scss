@@ -1,9 +1,22 @@
 .recipe-list {
   margin-left: 25rem;
-  padding: 2rem;
+  padding: 1.5rem;
 
   display: flex;
   flex-wrap: wrap;
-  // justify-content: center;
   gap: 1rem;
+}
+
+.recipe-list-empty {
+  margin-left: 25rem;
+  min-height: calc(100vh - 4rem);
+
+  display: grid;
+  place-items: center;
+
+  h2 {
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.54);
+  }
 }

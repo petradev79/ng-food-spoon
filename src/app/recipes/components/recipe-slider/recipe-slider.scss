@@ -1,9 +1,9 @@
 .recipe-slider {
   margin-bottom: 1rem;
-  // border: 1px solid red;
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: -5px 5px 20px 0px rgba(0, 0, 0, 0.2);
+
   &__header {
     height: 100px;
   }
@@ -12,10 +12,6 @@
     margin-bottom: 0.5rem;
     display: flex;
     gap: 0.5rem;
-
-    // .material-icons {
-    //   color: red;
-    // }
   }
 
   &__actions {

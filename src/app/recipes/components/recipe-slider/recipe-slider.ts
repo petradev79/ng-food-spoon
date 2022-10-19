@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-// import { Options } from '@angular-slider/ngx-slider';
 
 import {
   SaveSliderValuesInterface,
@@ -12,13 +11,7 @@ import {
   styleUrls: ['./recipe-slider.scss'],
 })
 export class RecipeSliderComponent implements OnInit {
-  // @Input() title!: string;
-  // @Input() description!: string;
-  // @Input() value!: number;
-  // @Input() highValue!: number;
-  // @Input() options!: Options;
   @Input() slider!: SliderInterface;
-
   @Output() changeSliderValuesEvent =
     new EventEmitter<SaveSliderValuesInterface>();
 

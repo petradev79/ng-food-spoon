@@ -65,8 +65,10 @@ export class RecipeFiltersComponent implements OnInit {
   ngOnInit() {}
 
   onChangeSliderValues(changedValues: SaveSliderValuesInterface) {
-    // console.log(changedValues);
-
     this.recipesService.changeSliderValues(changedValues);
+  }
+
+  test() {
+    this.recipesService.getRecipes();
   }
 }
