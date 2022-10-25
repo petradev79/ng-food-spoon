@@ -196,6 +196,7 @@ export class RecipesService {
     //   imageType: 'jpg',
     // },
   ]);
+  query$ = new BehaviorSubject<string>('');
   minCalories$ = new BehaviorSubject<number>(50);
   maxCalories$ = new BehaviorSubject<number>(800);
   minCarbs$ = new BehaviorSubject<number>(10);
@@ -209,7 +210,7 @@ export class RecipesService {
 
   fetchData(): Observable<RecipesDataInterface> {
     return this.http.get<RecipesDataInterface>(
-      `${BASE_URL}/complexSearch?apiKey=${API_KEY}&number=30&minCalories=${this.minCalories$.getValue()}&maxCalories=${this.maxCalories$.getValue()}&minCarbs=${this.minCarbs$.getValue()}&maxCarbs=${this.maxCarbs$.getValue()}&minProtein=${this.minProtein$.getValue()}&maxProtein=${this.maxProtein$.getValue()}&minFat=${this.minFat$.getValue()}&maxFat=${this.maxFat$.getValue()}`
+      `${BASE_URL}/complexSearch?apiKey=${API_KEY}&query=${this.query$.getValue()}&number=30&minCalories=${this.minCalories$.getValue()}&maxCalories=${this.maxCalories$.getValue()}&minCarbs=${this.minCarbs$.getValue()}&maxCarbs=${this.maxCarbs$.getValue()}&minProtein=${this.minProtein$.getValue()}&maxProtein=${this.maxProtein$.getValue()}&minFat=${this.minFat$.getValue()}&maxFat=${this.maxFat$.getValue()}`
     );
   }
 
@@ -218,11 +219,9 @@ export class RecipesService {
       console.log(recipesData);
       this.recipes$.next(recipesData.results);
     });
-  }
-
-  changeSliderValues(changedValues: SaveSliderValuesInterface) {
     console.log(
       'service',
+      this.query$.getValue(),
       this.minCalories$.getValue(),
       this.maxCalories$.getValue(),
       this.minCarbs$.getValue(),
@@ -232,7 +231,13 @@ export class RecipesService {
       this.minFat$.getValue(),
       this.maxFat$.getValue()
     );
+  }
 
+  changeQueryValue(changedValue: string) {
+    this.query$.next(changedValue);
+  }
+
+  changeSliderValues(changedValues: SaveSliderValuesInterface) {
     if (changedValues.title === 'Calories') {
       this.minCalories$.next(changedValues.minValue);
       this.maxCalories$.next(changedValues.maxValue);
@@ -249,17 +254,16 @@ export class RecipesService {
       this.minFat$.next(changedValues.minValue);
       this.maxFat$.next(changedValues.maxValue);
     }
+  }
 
-    console.log(
-      'service',
-      this.minCalories$.getValue(),
-      this.maxCalories$.getValue(),
-      this.minCarbs$.getValue(),
-      this.maxCarbs$.getValue(),
-      this.minProtein$.getValue(),
-      this.maxProtein$.getValue(),
-      this.minFat$.getValue(),
-      this.maxFat$.getValue()
-    );
+  resetSliderValues() {
+    this.minCalories$.next(50),
+      this.maxCalories$.next(800),
+      this.minCarbs$.next(10),
+      this.maxCarbs$.next(100),
+      this.minProtein$.next(10),
+      this.maxProtein$.next(100),
+      this.minFat$.next(1),
+      this.maxFat$.next(100);
   }
 }

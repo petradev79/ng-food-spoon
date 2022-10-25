@@ -1,5 +1,17 @@
 <div class="recipe-filters">
-  <h2 (click)="test()">Recipe filters</h2>
+  <h4>Recipe query</h4>
+  <mat-form-field class="recipe-filters__input" appearance="outline">
+    <mat-label>Choose favorite food</mat-label>
+    <input
+      matInput
+      placeholder="Ex. Pizza"
+      [value]="recipeQuery"
+      (keyup)="onChangeQueryValue($event)"
+      (keyup.enter)="onGetRecipes()"
+    />
+    <mat-icon color="primary" matSuffix>search</mat-icon>
+  </mat-form-field>
+  <h4>Recipe filters</h4>
   <div class="recipe-filters__sliders">
     <app-recipe-slider
       [slider]="sliderCalories"
@@ -17,5 +29,13 @@
       [slider]="sliderFat"
       (changeSliderValuesEvent)="onChangeSliderValues($event)"
     ></app-recipe-slider>
+  </div>
+  <div class="recipe-filters__actions">
+    <button mat-raised-button color="accent" (click)="resetAllFilters()">
+      Reset All Filters
+    </button>
+    <button mat-raised-button color="primary" (click)="onGetRecipes()">
+      Add Filters
+    </button>
   </div>
 </div>

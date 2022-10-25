@@ -6,6 +6,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatInputModule } from '@angular/material/input';
 
 import { RecipesService } from 'src/app/recipes/services/recipes.service';
 import { RecipesComponent } from 'src/app/recipes/recipes.component';
@@ -37,6 +38,7 @@ const routes: Routes = [
     MatIconModule,
     NgxSliderModule,
     MatExpansionModule,
+    MatInputModule,
   ],
   exports: [],
   providers: [RecipesService],

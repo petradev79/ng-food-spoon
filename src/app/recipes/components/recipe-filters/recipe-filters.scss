@@ -2,11 +2,37 @@
   position: fixed;
   width: 25rem;
   height: calc(100vh - 3rem);
-  padding: 2rem;
+  padding: 3rem 2rem;
   overflow-y: scroll;
   background: #fdfbfb;
+
+  &__input {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  &__actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 ::-webkit-scrollbar {
   width: 0.7rem;
+}
+
+::ng-deep {
+  .mat-form-field-outline {
+    box-shadow: -5px 5px 20px 0px rgba(0, 0, 0, 0.2);
+  }
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: #3f51b5;
+  }
 }

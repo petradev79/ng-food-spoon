@@ -12,6 +12,7 @@ import { RecipesService } from 'src/app/recipes/services/recipes.service';
   styleUrls: ['./recipe-filters.scss'],
 })
 export class RecipeFiltersComponent implements OnInit {
+  recipeQuery: string = this.recipesService.query$.getValue();
   sliderCalories: SliderInterface = {
     title: 'Calories',
     description: 'Choose min and max amount of calories.',
@@ -64,11 +65,37 @@ export class RecipeFiltersComponent implements OnInit {
 
   ngOnInit() {}
 
+  onChangeQueryValue(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.recipeQuery = target.value;
+    this.recipesService.changeQueryValue(this.recipeQuery);
+  }
+
   onChangeSliderValues(changedValues: SaveSliderValuesInterface) {
     this.recipesService.changeSliderValues(changedValues);
   }
 
-  test() {
+  onGetRecipes() {
     this.recipesService.getRecipes();
+  }
+
+  resetAllFilters() {
+    const sliders = [
+      this.sliderCalories,
+      this.sliderCarbs,
+      this.sliderProtein,
+      this.sliderFat,
+    ];
+    sliders.map((slider) => {
+      if (slider.options.floor) {
+        slider.minValue = slider.options.floor;
+      } else {
+        slider.minValue = 1;
+      }
+      if (slider.options.ceil) {
+        slider.maxValue = slider.options.ceil;
+      }
+    });
+    this.recipesService.resetSliderValues();
   }
 }
