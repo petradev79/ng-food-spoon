@@ -14,11 +14,16 @@ import { RecipeListComponent } from 'src/app/recipes/components/recipes-list/rec
 import { RecipeItemComponent } from 'src/app/recipes/components/recipe-item/recipe-item';
 import { RecipeFiltersComponent } from 'src/app/recipes/components/recipe-filters/recipe-filters';
 import { RecipeSliderComponent } from 'src/app/recipes/components/recipe-slider/recipe-slider';
+import { RecipeDetailsComponent } from 'src/app/recipes/components/recipe-details/recipe-details';
 
 const routes: Routes = [
   {
     path: 'recipes',
     component: RecipesComponent,
+  },
+  {
+    path: 'recipe-details/:id',
+    component: RecipeDetailsComponent,
   },
   { path: '', redirectTo: 'recipes', pathMatch: 'full' },
 ];
@@ -30,6 +35,7 @@ const routes: Routes = [
     RecipeItemComponent,
     RecipeFiltersComponent,
     RecipeSliderComponent,
+    RecipeDetailsComponent,
   ],
   imports: [
     CommonModule,
