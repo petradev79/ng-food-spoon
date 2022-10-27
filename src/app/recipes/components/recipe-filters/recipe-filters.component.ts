@@ -8,8 +8,8 @@ import { RecipesService } from 'src/app/recipes/services/recipes.service';
 
 @Component({
   selector: 'app-recipe-filters',
-  templateUrl: './recipe-filters.html',
-  styleUrls: ['./recipe-filters.scss'],
+  templateUrl: './recipe-filters.component.html',
+  styleUrls: ['./recipe-filters.component.scss'],
 })
 export class RecipeFiltersComponent implements OnInit {
   recipeQuery: string = this.recipesService.query$.getValue();

@@ -1,0 +1,48 @@
+<div class="details-header">
+  <div class="details-header__top">
+    <div>
+      <h1>{{ recipeDetails.title }}</h1>
+      <p *ngFor="let cuisine of recipeDetails.cuisines">
+        {{ cuisine }}
+      </p>
+    </div>
+    <div class="flex-center">
+      <div class="details-header__rating">
+        <span>health score</span>
+        <div>
+          <mat-icon color="accent">favorite</mat-icon>
+          {{ recipeDetails.healthScore }}
+        </div>
+      </div>
+      <div class="details-header__rating">
+        <span>aggregateLikes</span>
+        <div>
+          <mat-icon color="primary">thumb_up</mat-icon>
+          {{ recipeDetails.aggregateLikes }}
+        </div>
+      </div>
+      <div class="details-header__rating">
+        <span>cooking Minutes</span>
+        <div>
+          <mat-icon color="primary">timer</mat-icon>
+          {{ recipeDetails.cookingMinutes }} min.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="details-header__bottom flex-between">
+    <div>
+      <span *ngFor="let dish of recipeDetails.dishTypes">{{ dish }}</span>
+    </div>
+    <div class="details-header__serving">
+      <p>
+        <em>{{ recipeDetails.servings }}</em> serving{{
+          recipeDetails.servings == 1 ? "" : "s"
+        }}
+      </p>
+      <p>
+        <em>${{ recipeDetails.pricePerServing }}</em> per serving
+      </p>
+    </div>
+  </div>
+</div>

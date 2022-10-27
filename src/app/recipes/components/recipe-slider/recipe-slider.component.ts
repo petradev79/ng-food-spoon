@@ -7,8 +7,8 @@ import {
 
 @Component({
   selector: 'app-recipe-slider',
-  templateUrl: './recipe-slider.html',
-  styleUrls: ['./recipe-slider.scss'],
+  templateUrl: './recipe-slider.component.html',
+  styleUrls: ['./recipe-slider.component.scss'],
 })
 export class RecipeSliderComponent implements OnInit {
   @Input() slider!: SliderInterface;

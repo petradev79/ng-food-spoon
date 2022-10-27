@@ -4,8 +4,8 @@ import { RecipeInterface } from 'src/app/recipes/models/recipes.interface';
 
 @Component({
   selector: 'app-recipe-item',
-  templateUrl: './recipe-item.html',
-  styleUrls: ['./recipe-item.scss'],
+  templateUrl: './recipe-item.component.html',
+  styleUrls: ['./recipe-item.component.scss'],
 })
 export class RecipeItemComponent implements OnInit {
   @Input('recipe') recipe!: RecipeInterface;

@@ -1,3 +1,4 @@
+/* GENERAL  */
 *,
 *::before,
 *::after {
@@ -15,6 +16,19 @@ img {
 .main-wrapper {
   min-height: calc(100vh - 4rem);
   margin-top: 4rem;
+}
+
+/* MIXINS  */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header {
