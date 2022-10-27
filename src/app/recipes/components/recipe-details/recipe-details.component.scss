@@ -4,34 +4,28 @@
   margin: 10rem auto;
   padding: 0 2rem;
 
-  // display: flex;
-  // justify-content: space-between;
-  // gap: 1rem;
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 
   &__left,
   &__right {
     flex: 1;
   }
 
-  h2 {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    color: #3f51b5;
-  }
-}
-
-.ingredients {
-  &__item {
-    padding: 1rem;
-    overflow: hidden;
-
-    &:nth-child(even) {
-      background: #f1f1f1;
+  &__left {
+    img {
+      margin-bottom: 0.5rem;
     }
-  }
-  &__img {
-    width: 2rem;
-    margin-right: 1rem;
+
+    span {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      background: #f1f1f1;
+      border-radius: 3px;
+    }
   }
 }

@@ -1,0 +1,21 @@
+<div class="details-footer">
+  <div class="list">
+    <h2>
+      <mat-icon color="primary">playlist_add_check</mat-icon>
+      Instructions
+    </h2>
+    <mat-list role="list">
+      <mat-list-item
+        class="list__item"
+        role="listitem"
+        *ngFor="let step of recipeDetails.analyzedInstructions[0].steps"
+      >
+        <span>{{ step.number }}. {{ step.step }}</span>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div class="details-footer__summary">
+    <h2><mat-icon color="primary">summarize</mat-icon> Recipe summary</h2>
+    <p [innerHtml]="recipeDetails.summary"></p>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.details-footer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #f1f1f1;
+
+  &__summary {
+    flex: 1;
+    padding: 1rem;
+    background: #f1f1f1;
+
+    h3 {
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.54);
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+  }
+}

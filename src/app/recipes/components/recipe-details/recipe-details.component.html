@@ -3,79 +3,50 @@
     <app-recipe-details-header
       [recipeDetails]="recipeDetails"
     ></app-recipe-details-header>
-    <div class="details__left">
-      <img [src]="recipeDetails.image" [alt]="recipeDetails.title" />
-
-      <p>credits Text: {{ recipeDetails.creditsText }}</p>
-      <!-- <div>
-        <h2>cuisines</h2>
-        <p *ngFor="let cuisine of recipeDetails.cuisines">{{cuisine}}</p>
-      </div> -->
-      <!-- <p>dairy Free: {{recipeDetails.dairyFree}}</p> -->
-      <div>
-        <h2>Diets</h2>
-        <p *ngFor="let diet of recipeDetails.diets">{{ diet }}</p>
+    <div class="details__main">
+      <div class="details__left">
+        <img [src]="recipeDetails.image" [alt]="recipeDetails.title" />
+        <div class="flex-between">
+          <h3>{{ recipeDetails.creditsText }}</h3>
+          <span *ngFor="let cuisine of recipeDetails.cuisines">
+            {{ cuisine }}
+          </span>
+        </div>
       </div>
-      <!-- <p>gluten free: {{recipeDetails.glutenFree}}</p>
-       -->
-
-      <p>instructions: {{ recipeDetails.instructions }}</p>
-      <p>sourceName: {{ recipeDetails.sourceName }}</p>
-      <p>summary: {{ recipeDetails.summary }}</p>
-      <a [href]="recipeDetails.sourceUrl">{{ recipeDetails.sourceName }}</a>
-      <!-- <p>vegan: {{recipeDetails.vegan}}</p>
-      <p>vegetarian: {{recipeDetails.vegetarian}}</p>
-      <p>veryHealthy: {{recipeDetails.veryHealthy}}</p>
-      <p>veryPopular: {{recipeDetails.veryPopular}}</p> -->
-      <!-- <p>
-        weightWatcherSmartPoints: {{recipeDetails.weightWatcherSmartPoints}}
-      </p> -->
-    </div>
-    <div class="details__right">
-      <div class="ingredients">
-        <h2>
-          <mat-icon color="primary">playlist_add_check</mat-icon>
-          Ingredients
-        </h2>
-        <mat-list role="list">
-          <mat-list-item
-            class="ingredients__item"
-            role="listitem"
-            *ngFor="let ingredient of recipeDetails.extendedIngredients"
-          >
-            <img
-              class="ingredients__img"
-              [src]="
-                ingredient.image
-                  ? ingredientImagPath + ingredient.image
-                  : ingredientImagPath + 'null.png'
-              "
-              [alt]="ingredient.name"
-            />
-            <span
-              >{{ ingredient.amount }} {{ ingredient.unit }}
-              {{
-                ingredient.nameClean ? ingredient.nameClean : ingredient.name
-              }}</span
+      <div class="details__right">
+        <div class="list">
+          <h2>
+            <mat-icon color="primary">playlist_add_check</mat-icon>
+            Ingredients
+          </h2>
+          <mat-list role="list">
+            <mat-list-item
+              class="list__item"
+              role="listitem"
+              *ngFor="let ingredient of recipeDetails.extendedIngredients"
             >
-          </mat-list-item>
-        </mat-list>
+              <img
+                class="list__img"
+                [src]="
+                  ingredient.image
+                    ? ingredientImagPath + ingredient.image
+                    : ingredientImagPath + 'null.png'
+                "
+                [alt]="ingredient.name"
+              />
+              <span
+                >{{ ingredient.amount }} {{ ingredient.unit }}
+                {{
+                  ingredient.nameClean ? ingredient.nameClean : ingredient.name
+                }}</span
+              >
+            </mat-list-item>
+          </mat-list>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="ingredients">
-    <h2>
-      <mat-icon color="primary">playlist_add_check</mat-icon>
-      Instructions
-    </h2>
-    <mat-list role="list">
-      <mat-list-item
-        class="ingredients__item"
-        role="listitem"
-        *ngFor="let step of recipeDetails.analyzedInstructions[0].steps"
-      >
-        <span>step {{ step.number }}: {{ step.step }}</span>
-      </mat-list-item>
-    </mat-list>
+    <app-recipe-details-footer
+      [recipeDetails]="recipeDetails"
+    ></app-recipe-details-footer>
   </div>
 </div>

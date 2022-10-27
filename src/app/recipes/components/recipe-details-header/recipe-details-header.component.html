@@ -2,9 +2,7 @@
   <div class="details-header__top">
     <div>
       <h1>{{ recipeDetails.title }}</h1>
-      <p *ngFor="let cuisine of recipeDetails.cuisines">
-        {{ cuisine }}
-      </p>
+      <a [href]="recipeDetails.sourceUrl">{{ recipeDetails.sourceName }}</a>
     </div>
     <div class="flex-center">
       <div class="details-header__rating">

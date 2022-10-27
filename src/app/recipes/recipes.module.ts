@@ -17,6 +17,7 @@ import { RecipeFiltersComponent } from 'src/app/recipes/components/recipe-filter
 import { RecipeSliderComponent } from 'src/app/recipes/components/recipe-slider/recipe-slider.component';
 import { RecipeDetailsComponent } from 'src/app/recipes/components/recipe-details/recipe-details.component';
 import { RecipeDetailsHeaderComponent } from './components/recipe-details-header/recipe-details-header.component';
+import { RecipeDetailsFooterComponent } from './components/recipe-details-footer/recipe-details-footer.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,7 @@ const routes: Routes = [
     RecipeSliderComponent,
     RecipeDetailsComponent,
     RecipeDetailsHeaderComponent,
+    RecipeDetailsFooterComponent,
   ],
   imports: [
     CommonModule,
