@@ -2,12 +2,10 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-import {
-  RecipeInterface,
-  RecipesDataInterface,
-} from 'src/app/recipes/models/recipes.interface';
+import { RecipesDataInterface } from 'src/app/recipes/models/recipes.interface';
 import { SaveSliderValuesInterface } from 'src/app/recipes/models/slider.interface';
 import { RecipeDetailsInterface } from 'src/app/recipes/models/recipe-details.interface';
+import { RecipeInterface } from 'src/app/shared/models/recipe.interface';
 
 const API_KEY = '7d27d7003f8d42c3a204351bc7a42cbd';
 const BASE_URL = 'https://api.spoonacular.com/recipes';

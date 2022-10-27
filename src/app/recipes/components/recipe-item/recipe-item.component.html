@@ -9,7 +9,11 @@
       <span>Learn more</span>
     </span>
     <div class="recipe-item__action">
-      <button mat-mini-fab color="accent" [disabled]="isFavorite">
+      <button
+        mat-mini-fab
+        [color]="isFavorite ? 'accent' : 'primary'"
+        (click)="onToggleIsFavorite()"
+      >
         <mat-icon>favorite</mat-icon>
       </button>
       <button mat-mini-fab color="primary" (click)="onRecipeDetails()">

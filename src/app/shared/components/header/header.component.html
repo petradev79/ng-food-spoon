@@ -1,0 +1,25 @@
+<div class="header">
+  <a routerLink="/" class="header__logo">Food Spoon Header</a>
+  <button mat-icon-button color="primary" [matMenuTriggerFor]="menu">
+    <mat-icon
+      [matBadge]="itemsQuantity"
+      [matBadgeHidden]="!itemsQuantity"
+      matBadgeColor="accent"
+      >shopping_cart</mat-icon
+    >
+  </button>
+  <mat-menu #menu="matMenu">
+    <div class="cart-menu">
+      <div *ngIf="!cart.items.length">
+        <span mat-menu-item>No items in Cart</span>
+      </div>
+      <div *ngIf="cart.items.length">
+        <div mat-menu-item *ngFor="let item of cart.items">
+          <div>
+            <span>{{ item.title }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-menu>
+</div>

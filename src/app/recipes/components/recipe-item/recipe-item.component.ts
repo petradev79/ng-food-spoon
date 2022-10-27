@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RecipeInterface } from 'src/app/recipes/models/recipes.interface';
+import { Subscription } from 'rxjs';
+
+import { CartService } from 'src/app/cart/services/cart.service';
+import { RecipeInterface } from 'src/app/shared/models/recipe.interface';
 
 @Component({
   selector: 'app-recipe-item',
@@ -10,12 +13,23 @@ import { RecipeInterface } from 'src/app/recipes/models/recipes.interface';
 export class RecipeItemComponent implements OnInit {
   @Input('recipe') recipe!: RecipeInterface;
   isFavorite: boolean = false;
+  cartSubscription: Subscription | undefined;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private cartService: CartService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.cartSubscription = this.cartService.cart.subscribe((_cart) => {
+      this.isFavorite = _cart.items.some(
+        (_item) => _item.id === this.recipe.id
+      );
+    });
+  }
 
   onRecipeDetails() {
     this.router.navigate(['recipe-details', this.recipe.id]);
+  }
+
+  onToggleIsFavorite() {
+    this.cartService.toggleIsFavorite(this.recipe);
   }
 }
