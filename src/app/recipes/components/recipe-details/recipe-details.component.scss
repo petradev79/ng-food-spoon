@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 3rem;
   }
 
   &__left,
@@ -26,6 +26,20 @@
       padding: 0.5rem 1rem;
       background: #f1f1f1;
       border-radius: 3px;
+    }
+  }
+
+  &__summary {
+    flex: 1;
+
+    h3 {
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.54);
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
     }
   }
 }

@@ -9,6 +9,8 @@ import { RecipeDetailsInterface } from 'src/app/recipes/models/recipe-details.in
 })
 export class RecipeDetailsFooterComponent implements OnInit {
   @Input() recipeDetails!: RecipeDetailsInterface;
+  ingredientImagPath: string =
+    'https://spoonacular.com/cdn/ingredients_100x100/';
 
   constructor() {}
 

@@ -1,21 +1,56 @@
 <div class="details-footer">
   <div class="list">
-    <h2>
-      <mat-icon color="primary">playlist_add_check</mat-icon>
-      Instructions
-    </h2>
-    <mat-list role="list">
-      <mat-list-item
-        class="list__item"
-        role="listitem"
-        *ngFor="let step of recipeDetails.analyzedInstructions[0].steps"
-      >
-        <span>{{ step.number }}. {{ step.step }}</span>
-      </mat-list-item>
-    </mat-list>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="recipe-slider__header">
+        <mat-panel-title class="recipe-slider__title">
+          <h2>
+            <mat-icon color="primary">playlist_add_check</mat-icon>Instructions
+          </h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list role="list">
+        <mat-list-item
+          class="list__item"
+          role="listitem"
+          *ngFor="let step of recipeDetails.analyzedInstructions[0].steps"
+        >
+          <span>{{ step.number }}. {{ step.step }}</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
   </div>
-  <div class="details-footer__summary">
-    <h2><mat-icon color="primary">summarize</mat-icon> Recipe summary</h2>
-    <p [innerHtml]="recipeDetails.summary"></p>
+  <div class="list">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="recipe-slider__header">
+        <mat-panel-title class="recipe-slider__title">
+          <h2>
+            <mat-icon color="primary">playlist_add_check</mat-icon>Ingredients
+          </h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list role="list">
+        <mat-list-item
+          class="list__item"
+          role="listitem"
+          *ngFor="let ingredient of recipeDetails.extendedIngredients"
+        >
+          <img
+            class="list__img"
+            [src]="
+              ingredient.image
+                ? ingredientImagPath + ingredient.image
+                : ingredientImagPath + 'null.png'
+            "
+            [alt]="ingredient.name"
+          />
+          <span
+            >{{ ingredient.amount }} {{ ingredient.unit }}
+            {{
+              ingredient.nameClean ? ingredient.nameClean : ingredient.name
+            }}</span
+          >
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
   </div>
 </div>
