@@ -30,8 +30,4 @@ export class HeaderComponent implements OnInit {
       this.cart = cart;
     });
   }
-
-  onClearCart() {
-    // this.cartService.clearCart();
-  }
 }

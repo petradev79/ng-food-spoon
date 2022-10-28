@@ -13,10 +13,12 @@
       <span mat-menu-item>No items in Cart</span>
     </div>
     <div *ngIf="cart.items.length">
-      <div mat-menu-item class="cart-menu__title">
+      <a mat-menu-item routerLink="cart-list" class="cart-menu__title">
         <span> View Cart List </span>
-        <mat-icon class="cart-menu__title-icon">segment</mat-icon>
-      </div>
+        <mat-icon color="primary" class="cart-menu__title-icon"
+          >segment</mat-icon
+        >
+      </a>
       <div
         mat-menu-item
         *ngFor="let item of cart.items"

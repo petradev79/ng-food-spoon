@@ -1,0 +1,43 @@
+.cart-table {
+  width: 100%;
+  max-width: 1400px;
+  margin: 10rem auto;
+  padding: 0 2rem;
+}
+
+table {
+  width: 100%;
+
+  img {
+    width: 3rem;
+  }
+}
+
+th {
+  font-size: 14px;
+  text-transform: uppercase;
+
+  button {
+    text-transform: uppercase;
+  }
+}
+
+.mat-row {
+  height: 60px;
+}
+
+.mat-column-name {
+  width: 50%;
+}
+
+.mat-column-delete {
+  width: 10%;
+  text-align: center !important;
+}
+
+.mat-column-number,
+.mat-column-id,
+.mat-column-image,
+.mat-column-details {
+  width: 10%;
+}
