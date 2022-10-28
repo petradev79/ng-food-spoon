@@ -76,7 +76,7 @@ export class RecipeFiltersComponent implements OnInit {
   }
 
   onGetRecipes() {
-    this.recipesService.getRecipes();
+    // this.recipesService.getRecipes();
   }
 
   resetAllFilters() {

@@ -8,17 +8,29 @@
       >shopping_cart</mat-icon
     >
   </button>
-  <mat-menu #menu="matMenu">
-    <div class="cart-menu">
-      <div *ngIf="!cart.items.length">
-        <span mat-menu-item>No items in Cart</span>
+  <mat-menu #menu="matMenu" class="cart-menu">
+    <div *ngIf="!cart.items.length">
+      <span mat-menu-item>No items in Cart</span>
+    </div>
+    <div *ngIf="cart.items.length">
+      <div mat-menu-item class="cart-menu__title">
+        <span> View Cart List </span>
+        <mat-icon class="cart-menu__title-icon">segment</mat-icon>
       </div>
-      <div *ngIf="cart.items.length">
-        <div mat-menu-item *ngFor="let item of cart.items">
-          <div>
-            <span>{{ item.title }}</span>
-          </div>
+      <div
+        mat-menu-item
+        *ngFor="let item of cart.items"
+        class="cart-menu__item"
+      >
+        <div class="cart-menu__img">
+          <img [src]="item.image" [alt]="item.title" />
         </div>
+
+        <span>{{
+          item.title.length > 25
+            ? (item.title | slice: 0:25) + "..."
+            : item.title
+        }}</span>
       </div>
     </div>
   </mat-menu>

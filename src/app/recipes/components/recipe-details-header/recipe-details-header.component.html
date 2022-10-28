@@ -2,7 +2,16 @@
   <div class="details-header__top">
     <div>
       <h1>{{ recipeDetails.title }}</h1>
-      <a [href]="recipeDetails.sourceUrl">{{ recipeDetails.sourceName }}</a>
+      <button
+        mat-icon-button
+        [color]="isFavorite ? 'accent' : 'primary'"
+        (click)="onToggleIsFavorite()"
+      >
+        <span class="details-header__favorite">{{
+          isFavorite ? "remove from cart" : "Add item to Cart"
+        }}</span>
+        <mat-icon>favorite</mat-icon>
+      </button>
     </div>
     <div class="flex-center">
       <div class="details-header__rating">

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { RecipeInterface } from 'src/app/shared/models/recipe.interface';
   templateUrl: './recipe-item.component.html',
   styleUrls: ['./recipe-item.component.scss'],
 })
-export class RecipeItemComponent implements OnInit {
+export class RecipeItemComponent implements OnInit, OnDestroy {
   @Input('recipe') recipe!: RecipeInterface;
   isFavorite: boolean = false;
   cartSubscription: Subscription | undefined;
@@ -31,5 +31,11 @@ export class RecipeItemComponent implements OnInit {
 
   onToggleIsFavorite() {
     this.cartService.toggleIsFavorite(this.recipe);
+  }
+
+  ngOnDestroy(): void {
+    if (this.cartSubscription) {
+      this.cartSubscription.unsubscribe();
+    }
   }
 }

@@ -7,7 +7,7 @@
       <div class="details__left">
         <img [src]="recipeDetails.image" [alt]="recipeDetails.title" />
         <div class="flex-between">
-          <h3>{{ recipeDetails.creditsText }}</h3>
+          <a [href]="recipeDetails.sourceUrl">{{ recipeDetails.sourceName }}</a>
           <div>
             <span *ngFor="let cuisine of recipeDetails.cuisines">
               {{ cuisine }}

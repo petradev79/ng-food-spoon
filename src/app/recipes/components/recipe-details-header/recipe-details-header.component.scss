@@ -8,6 +8,12 @@
     }
   }
 
+  &__favorite {
+    margin-right: 0.5rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
   &__rating {
     margin-left: 2rem;
     display: flex;

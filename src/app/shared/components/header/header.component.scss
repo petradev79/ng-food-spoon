@@ -18,3 +18,26 @@
     color: #3f51b5;
   }
 }
+
+.cart-menu {
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__img {
+    width: 3rem;
+    overflow: hidden;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title-icon {
+    margin: 0 !important;
+  }
+}

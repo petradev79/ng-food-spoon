@@ -27,7 +27,6 @@ export class RecipeDetailsComponent implements OnInit {
 
   onGetRecipeDetails() {
     this.recipesService.getRecipeDetails(this.recipeId).subscribe((_recipe) => {
-      console.log(_recipe);
       this.recipeDetails = _recipe;
     });
   }
